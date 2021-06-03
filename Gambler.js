@@ -1,16 +1,33 @@
-console.log("======= Coin flip to win if Head/Tail comes 11 times ============")
+console.log("====================== Welcome To Magic Number ===================");
 
-let HeadCount = 0;
-let TailCount = 0;
-while (HeadCount <= 11 && TailCount <= 11) 
-{
-    let CoinToss = Math.floor(Math.random() * 10) % 2;
-    if (CoinToss == 1)
-        HeadCount++;
-    else
-        TailCount++;
-}
-if (TailCount == 11)
-    console.log("Tail won!! It comes 11 times.");
-else
-    console.log("Head won!! It comes 11 times.");
+console.log("Think any number between 1 and 100...");
+
+let MagicNumber = 0;
+let StartNum = 0;
+let EndNum = 100;
+let isNum = false;
+    while(isNum != true)
+    {
+        magicNumber = Math.round((StartNum + EndNum) / 2);
+        console.log("1.If your number is greater than : " + magicNumber);
+        console.log("2.If your number is less than : " + magicNumber);
+        console.log("3.If  " + magicNumber + " is your number");
+        const Prompt = require('prompt-sync')();
+        let choice = Number(Prompt('Enter your choice : '));
+        switch (choice) 
+        {
+            case 1:
+                StartNum = magicNumber;
+                break;
+            case 2:
+                EndNum = magicNumber;
+                break;
+            case 3:
+                isNum = true;
+                break;
+            default:
+                console.log("Please Enter Valid Choice.");
+                break;
+        }
+    }
+    console.log("The number you were thought is : "+ magicNumber);
